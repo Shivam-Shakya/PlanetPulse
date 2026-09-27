@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://planetpulse-1sx0.onrender.com';
 
 export default function useAppStore() {
   const [activities, setActivities] = useState([]);
@@ -10,8 +10,8 @@ export default function useAppStore() {
     const loadData = async () => {
       try {
         const [activitiesRes, settingsRes] = await Promise.all([
-          fetch(`${API_URL}/activities`),
-          fetch(`${API_URL}/settings`)
+          fetch(`${API_URL}/api/activities`),
+          fetch(`${API_URL}/api/settings`)
         ]);
 
         if (!activitiesRes.ok || !settingsRes.ok) {
@@ -33,7 +33,7 @@ export default function useAppStore() {
 
   const addActivity = async (activity) => {
     try {
-      const res = await fetch(`${API_URL}/activities`, {
+      const res = await fetch(`${API_URL}/api/activities`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(activity)
@@ -50,7 +50,7 @@ export default function useAppStore() {
 
   const deleteActivity = async (id) => {
     try {
-      const res = await fetch(`${API_URL}/activities/${id}`, {
+      const res = await fetch(`${API_URL}/api/activities/${id}`, {
         method: 'DELETE'
       });
 
@@ -66,7 +66,7 @@ export default function useAppStore() {
 
   const updateWeeklyTarget = async (newTarget) => {
     try {
-      const res = await fetch(`${API_URL}/settings`, {
+      const res = await fetch(`${API_URL}/api/settings`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ weeklyTarget: Number(newTarget) })
@@ -83,7 +83,7 @@ export default function useAppStore() {
 
   const clearAllData = async () => {
     try {
-      const res = await fetch(`${API_URL}/clear`, { method: 'POST' });
+      const res = await fetch(`${API_URL}/api/clear`, { method: 'POST' });
 
       if (!res.ok) throw new Error('Failed to clear database');
 
