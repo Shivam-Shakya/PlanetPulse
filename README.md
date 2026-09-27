@@ -2,8 +2,8 @@
 
 **Hackathon ID:** AZIS-XMBPAQ
 **Track:** A carbon footprint tracker - PlanetPulse
-**Live App URL:** [INSERT YOUR DEPLOYED SITE LINK HERE]
-**Demo Video:** [INSERT YOUR 3-4 MINUTE DEMO VIDEO LINK HERE]
+**Live App URL:** https://planet-pulse-olive.vercel.app/
+**Demo Video:** https://drive.google.com/file/d/1HrqvkJyRM67Tf6GLC0tfa2J-JbVL-Vqo/view?usp=sharing
 
 **API Status:** [Yes/No, I have implemented the standard API for this track]
 **Test Credentials:** As per the hackathon rules, this project does not include authentication (login/signup). Anyone can access and test all features without creating an account.
@@ -61,8 +61,8 @@ Start backend:
 npm run dev
 
 Backend:
-- http://localhost:5000
-- Health: http://localhost:5000/api/health
+- https://planetpulse-1sx0.onrender.com
+- Health: https://planetpulse-1sx0.onrender.com/api/activities
 
 ## 2. Frontend setup
 
@@ -73,14 +73,14 @@ npm install
 
 Optional `.env`:
 
-VITE_API_URL=http://localhost:5000/api
+VITE_API_URL=https://planetpulse-1sx0.onrender.com
 
 Start frontend:
 
 npm run dev
 
 Frontend:
-- http://localhost:5173
+- https://planet-pulse-olive.vercel.app/
 
 ## API endpoints
 
